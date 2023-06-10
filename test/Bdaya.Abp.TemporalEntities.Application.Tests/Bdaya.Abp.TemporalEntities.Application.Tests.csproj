@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <RootNamespace>Bdaya.Abp.TemporalEntities</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\Bdaya.Abp.TemporalEntities.Application\Bdaya.Abp.TemporalEntities.Application.csproj" />
+    <ProjectReference Include="..\Bdaya.Abp.TemporalEntities.Domain.Tests\Bdaya.Abp.TemporalEntities.Domain.Tests.csproj" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.2.0" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,7 @@
+{
+  "modules": {
+    "Bdaya.Abp.TemporalEntities": {
+      "path": "Bdaya.Abp.TemporalEntities.abpmdl.json"
+    }
+  }
+}

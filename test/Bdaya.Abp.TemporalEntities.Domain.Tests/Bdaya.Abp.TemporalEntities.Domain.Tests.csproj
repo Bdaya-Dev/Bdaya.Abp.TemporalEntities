@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <RootNamespace>Bdaya.Abp.TemporalEntities</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.2.0" />
+    <!--<ProjectReference Include="..\Bdaya.Abp.TemporalEntities.EntityFrameworkCore.Tests\Bdaya.Abp.TemporalEntities.EntityFrameworkCore.Tests.csproj" />-->
+    <ProjectReference Include="..\Bdaya.Abp.TemporalEntities.MongoDB.Tests\Bdaya.Abp.TemporalEntities.MongoDB.Tests.csproj" />
+  </ItemGroup>
+
+</Project>

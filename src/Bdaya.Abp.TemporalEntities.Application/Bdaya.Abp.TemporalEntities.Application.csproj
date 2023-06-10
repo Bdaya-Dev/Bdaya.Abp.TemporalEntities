@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <RootNamespace>Bdaya.Abp.TemporalEntities</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.AutoMapper" Version="7.2.2" />
+    <PackageReference Include="Volo.Abp.Ddd.Application" Version="7.2.2" />
+    <ProjectReference Include="..\Bdaya.Abp.TemporalEntities.Application.Contracts\Bdaya.Abp.TemporalEntities.Application.Contracts.csproj" />
+    <ProjectReference Include="..\Bdaya.Abp.TemporalEntities.Domain\Bdaya.Abp.TemporalEntities.Domain.csproj" />
+  </ItemGroup>
+
+</Project>

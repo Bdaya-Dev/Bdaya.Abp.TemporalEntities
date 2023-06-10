@@ -1,0 +1,79 @@
+{
+  "folders": {
+    "items": {
+      "src": {},
+      "test": {},
+      "host": {}
+    }
+  },
+  "packages": {
+    "Bdaya.Abp.TemporalEntities.Domain.Shared": {
+      "path": "src/Bdaya.Abp.TemporalEntities.Domain.Shared/Bdaya.Abp.TemporalEntities.Domain.Shared.abppkg.json",
+      "folder": "src"
+    },
+    "Bdaya.Abp.TemporalEntities.Domain": {
+      "path": "src/Bdaya.Abp.TemporalEntities.Domain/Bdaya.Abp.TemporalEntities.Domain.abppkg.json",
+      "folder": "src"
+    },
+    "Bdaya.Abp.TemporalEntities.Application.Contracts": {
+      "path": "src/Bdaya.Abp.TemporalEntities.Application.Contracts/Bdaya.Abp.TemporalEntities.Application.Contracts.abppkg.json",
+      "folder": "src"
+    },
+    "Bdaya.Abp.TemporalEntities.Application": {
+      "path": "src/Bdaya.Abp.TemporalEntities.Application/Bdaya.Abp.TemporalEntities.Application.abppkg.json",
+      "folder": "src"
+    },
+    "Bdaya.Abp.TemporalEntities.EntityFrameworkCore": {
+      "path": "src/Bdaya.Abp.TemporalEntities.EntityFrameworkCore/Bdaya.Abp.TemporalEntities.EntityFrameworkCore.abppkg.json",
+      "folder": "src"
+    },
+    "Bdaya.Abp.TemporalEntities.MongoDB": {
+      "path": "src/Bdaya.Abp.TemporalEntities.MongoDB/Bdaya.Abp.TemporalEntities.MongoDB.abppkg.json",
+      "folder": "src"
+    },
+    "Bdaya.Abp.TemporalEntities.HttpApi": {
+      "path": "src/Bdaya.Abp.TemporalEntities.HttpApi/Bdaya.Abp.TemporalEntities.HttpApi.abppkg.json",
+      "folder": "src"
+    },
+    "Bdaya.Abp.TemporalEntities.HttpApi.Client": {
+      "path": "src/Bdaya.Abp.TemporalEntities.HttpApi.Client/Bdaya.Abp.TemporalEntities.HttpApi.Client.abppkg.json",
+      "folder": "src"
+    },
+    "Bdaya.Abp.TemporalEntities.TestBase": {
+      "path": "test/Bdaya.Abp.TemporalEntities.TestBase/Bdaya.Abp.TemporalEntities.TestBase.abppkg.json",
+      "folder": "test"
+    },
+    "Bdaya.Abp.TemporalEntities.EntityFrameworkCore.Tests": {
+      "path": "test/Bdaya.Abp.TemporalEntities.EntityFrameworkCore.Tests/Bdaya.Abp.TemporalEntities.EntityFrameworkCore.Tests.abppkg.json",
+      "folder": "test"
+    },
+    "Bdaya.Abp.TemporalEntities.MongoDB.Tests": {
+      "path": "test/Bdaya.Abp.TemporalEntities.MongoDB.Tests/Bdaya.Abp.TemporalEntities.MongoDB.Tests.abppkg.json",
+      "folder": "test"
+    },
+    "Bdaya.Abp.TemporalEntities.Domain.Tests": {
+      "path": "test/Bdaya.Abp.TemporalEntities.Domain.Tests/Bdaya.Abp.TemporalEntities.Domain.Tests.abppkg.json",
+      "folder": "test"
+    },
+    "Bdaya.Abp.TemporalEntities.Application.Tests": {
+      "path": "test/Bdaya.Abp.TemporalEntities.Application.Tests/Bdaya.Abp.TemporalEntities.Application.Tests.abppkg.json",
+      "folder": "test"
+    },
+    "Bdaya.Abp.TemporalEntities.HttpApi.Host": {
+      "path": "host/Bdaya.Abp.TemporalEntities.HttpApi.Host/Bdaya.Abp.TemporalEntities.HttpApi.Host.abppkg.json",
+      "folder": "host"
+    },
+    "Bdaya.Abp.TemporalEntities.HttpApi.Client.ConsoleTestApp": {
+      "path": "test/Bdaya.Abp.TemporalEntities.HttpApi.Client.ConsoleTestApp/Bdaya.Abp.TemporalEntities.HttpApi.Client.ConsoleTestApp.abppkg.json",
+      "folder": "test"
+    },
+    "Bdaya.Abp.TemporalEntities.AuthServer": {
+      "path": "host/Bdaya.Abp.TemporalEntities.AuthServer/Bdaya.Abp.TemporalEntities.AuthServer.abppkg.json",
+      "folder": "host"
+    },
+    "Bdaya.Abp.TemporalEntities.Host.Shared": {
+      "path": "host/Bdaya.Abp.TemporalEntities.Host.Shared/Bdaya.Abp.TemporalEntities.Host.Shared.abppkg.json",
+      "folder": "host"
+    }
+  }
+}
