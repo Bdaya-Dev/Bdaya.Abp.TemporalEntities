@@ -11,5 +11,5 @@ public static class HistoryEntityHelper
         where T : class, IEntityHistory
     {
         return query.Where(x => x.ValidFrom <= date && x.ValidTo > date);
-    }    
+    }
 }

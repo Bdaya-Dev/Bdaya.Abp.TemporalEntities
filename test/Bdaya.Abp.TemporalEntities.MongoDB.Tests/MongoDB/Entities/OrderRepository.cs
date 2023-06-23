@@ -10,9 +10,9 @@ using Volo.Abp.MongoDB;
 
 namespace Bdaya.Abp.TemporalEntities.MongoDB.Entities;
 
-public class OrderRepository : MongoDbRepository<TestMongoDbContext, Order, Guid>, IOrderRepository
-{
-    public OrderRepository(IMongoDbContextProvider<TestMongoDbContext> dbContextProvider) : base(dbContextProvider)
-    {
-    }
-}
+//public class OrderRepository : MongoDbRepository<TestMongoDbContext, Order, Guid>, IOrderRepository
+//{
+//    public OrderRepository(IMongoDbContextProvider<TestMongoDbContext> dbContextProvider) : base(dbContextProvider)
+//    {
+//    }
+//}

@@ -10,5 +10,5 @@ public class HistoryRepository_Tests : HistoryEntityRepository_Tests<TemporalEnt
      * the base class.
      * One exception can be some specific tests related to MongoDB.
      */
-
+    
 }

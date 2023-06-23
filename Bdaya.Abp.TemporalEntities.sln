@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.29001.49
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33627.172
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bdaya.Abp.TemporalEntities.Domain.Shared", "src\Bdaya.Abp.TemporalEntities.Domain.Shared\Bdaya.Abp.TemporalEntities.Domain.Shared.csproj", "{D64C1577-4929-4B60-939E-96DE1534891A}"
 EndProject
@@ -43,7 +43,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bdaya.Abp.TemporalEntities.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bdaya.Abp.TemporalEntities.Host.Shared", "host\Bdaya.Abp.TemporalEntities.Host.Shared\Bdaya.Abp.TemporalEntities.Host.Shared.csproj", "{F6AC8D4A-EDD7-4514-8E8A-5BCB019864DB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bdaya.Abp.TemporalEntities.Installer", "src\Bdaya.Abp.TemporalEntities.Installer\Bdaya.Abp.TemporalEntities.Installer.csproj", "{BE39FD00-745B-4049-8161-FC129817CBE4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bdaya.Abp.TemporalEntities.Installer", "src\Bdaya.Abp.TemporalEntities.Installer\Bdaya.Abp.TemporalEntities.Installer.csproj", "{BE39FD00-745B-4049-8161-FC129817CBE4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{C22C68A6-808B-4362-8D9F-70502BCFA1DC}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

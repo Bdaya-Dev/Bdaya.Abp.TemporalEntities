@@ -14,22 +14,21 @@ using Volo.Abp.Timing;
 namespace Bdaya.Abp.TemporalEntities.MongoDB.Entities;
 
 public class ProductRepository
-    : TemporalMongoDbRepository<TestMongoDbContext, Product, ProductHistory, Guid>,
+    : TemporalMongoDbRepository<TestMongoDbContext, ProductModel, ProductModelHistory, Guid>,
         IProductRepository
 {
     public ProductRepository(
         IMongoDbContextProvider<TestMongoDbContext> dbContextProvider,
-        IRepository<ProductHistory, Guid> historyRepository,
-        IClock clock
+        IRepository<ProductModelHistory, Guid> historyRepository
     )
-        : base(dbContextProvider, historyRepository, clock) { }
+        : base(dbContextProvider, historyRepository) { }
 
-    protected override ProductHistory CreateHistoryEntity(
-        Product entity,
+    protected override ProductModelHistory CreateHistoryEntity(
+        ProductModel entity,
         DateTime ValidFrom,
         DateTime ValidTo
     )
     {
-        return new ProductHistory(entity, ValidFrom, ValidTo);
+        return new ProductModelHistory(entity, ValidFrom, ValidTo);
     }
 }

@@ -10,28 +10,56 @@ using Volo.Abp.Timing;
 using System.Linq;
 using SharpCompress.Common;
 using System.ComponentModel.DataAnnotations;
+using Volo.Abp.DependencyInjection;
+using Bdaya.Abp.TemporalEntities.Repositories;
 
 namespace Bdaya.Abp.TemporalEntities.MongoDB;
 
+public class TemporalMongoDbRepository<TMongoDbContext, TEntity, TKey>
+    : TemporalMongoDbRepository<
+        TMongoDbContext,
+        TEntity,
+        EntityHistoryAggregateRoot<TEntity, TKey>,
+        TKey
+    >,
+        ITemporalRepository<TEntity, TKey>
+    where TMongoDbContext : IAbpMongoDbContext
+    where TEntity : class, IEntity<TKey>
+{
+    protected TemporalMongoDbRepository(
+        IMongoDbContextProvider<TMongoDbContext> dbContextProvider,
+        IRepository<EntityHistoryAggregateRoot<TEntity, TKey>, Guid> historyRepository
+    )
+        : base(dbContextProvider, historyRepository) { }
+
+    protected override EntityHistoryAggregateRoot<TEntity, TKey> CreateHistoryEntity(
+        TEntity entity,
+        DateTime ValidFrom,
+        DateTime ValidTo
+    )
+    {
+        return new EntityHistoryAggregateRoot<TEntity, TKey>(entity, ValidFrom, ValidTo);
+    }
+}
+
 public abstract class TemporalMongoDbRepository<TMongoDbContext, TEntity, TEntityHistory, TKey>
-    : MongoDbRepository<TMongoDbContext, TEntity, TKey>
+    : MongoDbRepository<TMongoDbContext, TEntity, TKey>,
+        ITemporalRepository<TEntity, TEntityHistory, TKey>
     where TMongoDbContext : IAbpMongoDbContext
     where TEntity : class, IEntity<TKey>
     where TEntityHistory : class, IEntityHistory<TEntity>, IEntity<Guid>
-    where TKey : IEquatable<TKey>
 {
+    public IClock Clock => LazyServiceProvider.LazyGetRequiredService<IClock>();
+
     public TemporalMongoDbRepository(
         IMongoDbContextProvider<TMongoDbContext> dbContextProvider,
-        IRepository<TEntityHistory, Guid> historyRepository,
-        IClock clock
+        IRepository<TEntityHistory, Guid> historyRepository
     )
         : base(dbContextProvider)
     {
         HistoryRepository = historyRepository;
-        Clock = clock;
     }
 
-    protected IClock Clock { get; }
     protected IRepository<TEntityHistory, Guid> HistoryRepository { get; }
 
     protected abstract TEntityHistory CreateHistoryEntity(
@@ -43,10 +71,12 @@ public abstract class TemporalMongoDbRepository<TMongoDbContext, TEntity, TEntit
     private async Task HandleDeleteById(TKey id, CancellationToken cancellationToken = default)
     {
         var date = Clock.Now;
+#pragma warning disable CS8602 // Dereference of a possibly null reference.
         var oldHistory = await HistoryRepository.SingleOrDefaultAsync(
             x => x.Entity.Id.Equals(id) && x.ValidTo == DateTime.MaxValue,
             cancellationToken: cancellationToken
         );
+#pragma warning restore CS8602 // Dereference of a possibly null reference.
         if (oldHistory != null)
         {
             oldHistory.ValidTo = date;
@@ -158,10 +188,12 @@ public abstract class TemporalMongoDbRepository<TMongoDbContext, TEntity, TEntit
         var result = await base.UpdateAsync(entity, autoSave, cancellationToken);
         var date = Clock.Now;
         //get old history entity, change ValidTo to date
+#pragma warning disable CS8602 // Dereference of a possibly null reference.
         var oldHistory = await HistoryRepository.SingleOrDefaultAsync(
             x => x.Entity.Id.Equals(result.Id) && x.ValidTo == DateTime.MaxValue,
             cancellationToken: cancellationToken
         );
+#pragma warning restore CS8602 // Dereference of a possibly null reference.
 
         if (oldHistory != null)
         {

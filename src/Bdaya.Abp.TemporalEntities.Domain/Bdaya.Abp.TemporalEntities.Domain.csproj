@@ -9,6 +9,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Include="..\..\.editorconfig" Link=".editorconfig" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Volo.Abp.Ddd.Domain" Version="7.2.2" />
     <ProjectReference Include="..\Bdaya.Abp.TemporalEntities.Domain.Shared\Bdaya.Abp.TemporalEntities.Domain.Shared.csproj" />
   </ItemGroup>

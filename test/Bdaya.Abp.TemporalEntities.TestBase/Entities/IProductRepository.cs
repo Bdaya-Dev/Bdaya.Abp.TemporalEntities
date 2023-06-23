@@ -7,7 +7,7 @@ using Volo.Abp.Domain.Repositories;
 
 namespace Bdaya.Abp.TemporalEntities.Entities
 {
-    public interface IProductRepository : IRepository<Product, Guid>
+    public interface IProductRepository : IRepository<ProductModel, Guid>
     {
     }
 }

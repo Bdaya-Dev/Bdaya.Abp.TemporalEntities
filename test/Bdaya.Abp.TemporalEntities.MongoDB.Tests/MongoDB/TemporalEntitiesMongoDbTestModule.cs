@@ -24,8 +24,8 @@ public class TemporalEntitiesMongoDbTestModule : AbpModule
         context.Services.AddMongoDbContext<TestMongoDbContext>(options =>
         {
             options.AddDefaultRepositories();
-            options.AddRepository<Product, ProductRepository>();
-            options.AddRepository<Order, OrderRepository>();
+            options.AddRepository<ProductModel, ProductRepository>();
+            
         });
 
         Configure<AbpDbConnectionOptions>(options =>
