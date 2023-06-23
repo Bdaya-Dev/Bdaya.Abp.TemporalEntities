@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using Bdaya.Abp.TemporalEntities.Repositories;
+using Microsoft.Extensions.DependencyInjection;
 using Volo.Abp.Modularity;
 using Volo.Abp.MongoDB;
 
@@ -9,11 +10,7 @@ public class TemporalEntitiesMongoDbModule : AbpModule
 {
     public override void ConfigureServices(ServiceConfigurationContext context)
     {
-        context.Services.AddMongoDbContext<TemporalEntitiesMongoDbContext>(options =>
-        {
-            /* Add custom repositories here. Example:
-             * options.AddRepository<Question, MongoQuestionRepository>();
-             */
-        });
+        //context.Services.AddTransient(typeof(ITemporalRepository<,>), typeof(TemporalMongoDbRepository<,>));
+        
     }
 }

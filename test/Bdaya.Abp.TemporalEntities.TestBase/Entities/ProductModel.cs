@@ -5,7 +5,7 @@ using Volo.Abp.Domain.Entities.Auditing;
 
 namespace Bdaya.Abp.TemporalEntities.Entities;
 
-public class ProductModel : AggregateRoot<Guid>, ISoftDelete
+public class ProductModel : AuditedAggregateRoot<Guid>, ISoftDelete
 {
 #pragma warning disable CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
     public ProductModel() { }
