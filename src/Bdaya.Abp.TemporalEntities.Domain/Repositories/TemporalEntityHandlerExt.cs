@@ -13,11 +13,12 @@ public static class TemporalEntityHandlerExt
     )
         where TEntity : class, IEntity<TKey>
     {
-        s.AddTransient<
-            ILocalEventHandler<EntityChangedEventData<TEntity>>,
+        return RegisterTemporalEntityHandler<
+            TEntity,
+            TKey,
+            EntityHistoryAggregateRoot<TEntity, TKey>,
             TemporalEntityHandler<TEntity, TKey>
-        >();
-        return s;
+        >(s);
     }
 
     public static IServiceCollection RegisterTemporalEntityHandler<
