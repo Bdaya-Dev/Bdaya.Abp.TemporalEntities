@@ -2,9 +2,7 @@
 
 public static class TemporalEntitiesDbProperties
 {
-    public static string DbTablePrefix { get; set; } = "TemporalEntities";
+    public static string DbTablePrefix { get; set; } = "Temporal";
 
     public static string? DbSchema { get; set; } = null;
-
-    public const string ConnectionStringName = "TemporalEntities";
 }

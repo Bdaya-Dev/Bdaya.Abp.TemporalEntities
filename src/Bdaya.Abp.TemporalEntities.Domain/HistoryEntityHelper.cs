@@ -28,8 +28,8 @@ public static class HistoryEntityHelper
     {
         Expression<Func<THistory, bool>> finalExpr =
             date == null
-                ? x => x.Entity.Id.Equals(entityId) && x.ValidTo == DateTime.MaxValue
-                : x => x.Entity.Id.Equals(entityId) && x.ValidFrom <= date && x.ValidTo > date;
+                ? x => x.Entity.Id!.Equals(entityId) && x.ValidTo == DateTime.MaxValue
+                : x => x.Entity.Id!.Equals(entityId) && x.ValidFrom <= date && x.ValidTo > date;
         if (predicate != null)
         {
             finalExpr = finalExpr.And(predicate);
