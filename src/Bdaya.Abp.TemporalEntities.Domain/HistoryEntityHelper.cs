@@ -72,7 +72,17 @@ public static class HistoryEntityHelper
         );
         //a - a1,a2,a3,a4
         //b - b1,b2,b3,b4
-        var finalPredicate = smallPredicates.Aggregate((a, b) => a.Or(b));
+
+        Expression<Func<THistory, bool>>? finalPredicate;
+        if (smallPredicates.Any())
+        {
+            finalPredicate = smallPredicates.Aggregate((a, b) => a.Or(b));
+        }
+        else
+        {
+            finalPredicate = (z) => true;
+        }
+
         if (predicate != null)
         {
             finalPredicate = finalPredicate.And(predicate);
