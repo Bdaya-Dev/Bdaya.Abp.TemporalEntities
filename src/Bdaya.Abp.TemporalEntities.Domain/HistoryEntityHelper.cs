@@ -55,13 +55,14 @@ public static class HistoryEntityHelper
         return repo.GetListAsync(finalPredicate);
     }
 
-    public static Task<List<THistory>> GetListAt<THistory>(
+    public static async Task<List<THistory>> GetListAt<THistory>(
         this IRepository<THistory> repo,
         HashSet<DateTime?> dates,
         Expression<Func<THistory, bool>>? predicate = null
     )
         where THistory : class, IEntity, IEntityHistory
     {
+        var allData = await repo.GetListAsync();
         var smallPredicates = dates.Select(
             date =>
                 date == null
@@ -87,6 +88,6 @@ public static class HistoryEntityHelper
         {
             finalPredicate = finalPredicate.And(predicate);
         }
-        return repo.GetListAsync(finalPredicate);
+        return await repo.GetListAsync(finalPredicate);
     }
 }
